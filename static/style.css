@@ -1,0 +1,110 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #e0f7fa, #e1bee7);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #4a148c;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #7b1fa2;
+    outline: none;
+    box-shadow: 0 0 8px rgba(123, 31, 162, 0.3);
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #8e24aa, #ce93d8);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #7b1fa2, #ab47bc);
+    transform: scale(1.03);
+}
+
+.task-card {
+    background: #f3e5f5;
+    border-left: 6px solid #7b1fa2;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.task-card.done {
+    border-left-color: #2e7d32;
+    background-color: #e8f5e9;
+}
+
+.task-card.in-progress {
+    border-left-color: #f9a825;
+    background-color: #fffde7;
+}
+
+.task-card.to-do {
+    border-left-color: #1565c0;
+    background-color: #e3f2fd;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #6a1b9a;
+    padding: 15px 25px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
