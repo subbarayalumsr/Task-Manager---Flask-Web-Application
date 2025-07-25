@@ -1,2 +1,1 @@
-# Task-Manager---Flask-Web-Application
-A clean and simple Task Management web application built using Flask. This project allows users to register, log in, and manage their personal tasks from a web browser.
+A simple web-based Task Manager built with Flask, SQShell, and Flask-Login. Users can register, log in, and manage personal tasks with features like add, view, edit, update, and delete. The dashboard displays task counts by status and sorts tasks by due date. Designed with clean HTML and CSS for a user-friendly experience.
