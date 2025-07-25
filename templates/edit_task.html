@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Edit Task</h2>
+    <form method="POST">
+        <p>Title: {{ task[2] }}</p>
+        <p>Description: {{ task[3] }}</p>
+        <p>Due Date: {{ task[4] }}</p>
+        <label for="status">Change Status:</label>
+        <select name="status">
+            <option value="To Do" {% if task[5] == 'To Do' %}selected{% endif %}>To Do</option>
+            <option value="In Progress" {% if task[5] == 'In Progress' %}selected{% endif %}>In Progress</option>
+            <option value="Done" {% if task[5] == 'Done' %}selected{% endif %}>Done</option>
+        </select>
+        <button type="submit">Update</button>
+    </form>
+    <a href="{{ url_for('tasks') }}">Back to Tasks</a>
+</div>
+</body>
+</html>
