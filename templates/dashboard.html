@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome, {{ username }}!</h1>
+
+        <div class="status-summary">
+            <h2>📊 Task Summary</h2>
+            <div class="status-box">
+                <div class="status to-do">To Do: <strong>{{ status_counts['To Do'] }}</strong></div>
+                <div class="status in-progress">In Progress: <strong>{{ status_counts['In Progress'] }}</strong></div>
+                <div class="status done">Done: <strong>{{ status_counts['Done'] }}</strong></div>
+            </div>
+        </div>
+
+        <div class="task-list">
+            <h2>🗂️ Your Tasks</h2>
+            {% for task in tasks %}
+                <div class="task-item">
+                    <h3>{{ task[0] }}</h3>
+                    <p><strong>Description:</strong> {{ task[1] }}</p>
+                    <p><strong>Due Date:</strong> {{ task[2].strftime('%d-%m-%Y') }}</p>
+                    <p><strong>Status:</strong> {{ task[3] }}</p>
+                </div>
+            {% else %}
+                <p>No tasks found.</p>
+            {% endfor %}
+        </div>
+
+        <div class="button-group">
+            <a href="{{ url_for('create_task') }}"><button>Create Task</button></a>
+            <a href="{{ url_for('tasks') }}"><button>View Tasks</button></a>
+            <a href="{{ url_for('logout') }}"><button class="logout-btn">Logout</button></a>
+        </div>
+    </div>
+</body>
+</html>
